@@ -1,0 +1,21 @@
+services:
+# Pierwszy serwis
+  web:
+    # Uruchomi kontener z Twoją aplikacją, zakładając, że Dockerfile  jest w tym samym katalogu
+    build: .
+    ports:
+      - "8000:8000"
+    # Przypisanie do odpowiedniej sieci dockerowej
+    networks:
+      - titanic-net
+
+  # Drugi serwis
+  redis:
+    image: "redis:alpine"
+    networks:
+      - titanic-net
+
+# Definicja sieci dockerowej
+networks:
+  titanic-net:
+    driver: bridge
