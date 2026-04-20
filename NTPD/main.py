@@ -61,7 +61,7 @@ def get_info():
         "model_type": "LogisticRegression",
         "features": ["Pclass", "Sex", "Age", "SibSp", "Parch", "Fare"],
         "target": "Survived",
-        "accuracy": round(float(acc), 4,
+        "accuracy": round(float(acc), 4),
         "environment": env                
     }
 
