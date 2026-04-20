@@ -62,7 +62,7 @@ def get_info():
         "features": ["Pclass", "Sex", "Age", "SibSp", "Parch", "Fare"],
         "target": "Survived",
         "accuracy": round(float(acc), 4,
-        "environment": app_env                
+        "environment": env                
     }
 
 # Zad 4
