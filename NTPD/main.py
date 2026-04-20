@@ -1,4 +1,5 @@
 # Importy
+import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
@@ -37,6 +38,8 @@ acc = accuracy_score(y_test, y_pred)
 # ----------------APLIKACJA------------------------------------------------------------------
 app = FastAPI()
 
+env = os.getenv("ENVIRONMENT", "default")
+
 # Format danych
 class PassengerData(BaseModel):
     Pclass: int
@@ -58,7 +61,8 @@ def get_info():
         "model_type": "LogisticRegression",
         "features": ["Pclass", "Sex", "Age", "SibSp", "Parch", "Fare"],
         "target": "Survived",
-        "accuracy": round(float(acc), 4)
+        "accuracy": round(float(acc), 4,
+        "environment": app_env                
     }
 
 # Zad 4
